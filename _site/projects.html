@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Big Data — Driver &amp; Truck Performance Analysis – EricChu666.github.io</title>
+<title>projects – EricChu666.github.io</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -39,7 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-cc63fce9873912f1bbbccf05079cc9ea.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-01fbe853b7980beddfee3b159dd84a08.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -94,7 +94,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./projects.html"> 
+    <a class="nav-link active" href="./projects.html" aria-current="page"> 
 <span class="menu-text">projects</span></a>
   </li>  
   <li class="nav-item">
@@ -117,13 +117,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#problem-statement" id="toc-problem-statement" class="nav-link" data-scroll-target="#problem-statement">Problem Statement</a></li>
-  <li><a href="#strategy" id="toc-strategy" class="nav-link" data-scroll-target="#strategy">Strategy</a></li>
-  <li><a href="#data-pipeline" id="toc-data-pipeline" class="nav-link" data-scroll-target="#data-pipeline">Data &amp; Pipeline</a></li>
-  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a></li>
-  <li><a href="#outcomes" id="toc-outcomes" class="nav-link" data-scroll-target="#outcomes">Outcomes</a></li>
-  <li><a href="#tech-stack" id="toc-tech-stack" class="nav-link" data-scroll-target="#tech-stack">Tech Stack</a></li>
+  <li><a href="#big-data---driver-truck-performance-analysis" id="toc-big-data---driver-truck-performance-analysis" class="nav-link active" data-scroll-target="#big-data---driver-truck-performance-analysis">Big Data - Driver &amp; Truck Performance Analysis</a></li>
   </ul>
 </nav>
     </div>
@@ -132,7 +126,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Big Data — Driver &amp; Truck Performance Analysis</h1>
+<h1 class="title">projects</h1>
 </div>
 
 
@@ -149,250 +143,17 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>This project analyzes the performance of truck drivers and truck models across cities in California for Az National Trucking (ANT), a fictional national trucking corporation. The goal is to build a risk assessment and fuel anomaly alerting workflow to help prioritize high-risk drivers/vehicles.</p>
-<p><strong>Repo:</strong> <a href="https://github.com/EricChu666/Big-Data" class="uri">https://github.com/EricChu666/Big-Data</a></p>
+<p>This page is a portfolio overview. Click into each project for details (problem, strategy, methodology, bottlenecks, new tech, outcomes).</p>
+<section id="big-data---driver-truck-performance-analysis" class="level3 card">
+<h3 class="anchored" data-anchor-id="big-data---driver-truck-performance-analysis">Big Data - Driver &amp; Truck Performance Analysis</h3>
 </section>
-<section id="problem-statement" class="level2">
-<h2 class="anchored" data-anchor-id="problem-statement">Problem Statement</h2>
+<p>Analyzing performance among truck drivers and truck models across cities in California, building risk assessment and fuel anomaly alerts to prioritize high-risk drivers/vehicles.</p>
 <ul>
-<li><strong>Primary Question:</strong> What insights can help management prioritize which drivers require intervention and which vehicles require inspection, in order to improve fleet reliability and safety?</li>
-<li><strong>Specific Business Objective:</strong> Identify drivers with a risk factor greater than or equal to 7.0 (on a scale of 1-10) who also have fuel efficiency anomalies, creating a “dual concern” flag for immediate management attention.</li>
-<li><strong>Why does it matter?</strong>
-<ul>
-<li>Gives management a clear, consolidated view of operational risk across 100 drivers</li>
-<li>Identifies dangerous driving patterns (speeding, lane departure, unsafe following) before accidents happen</li>
-<li>Detects fuel-related mechanical issues through MPG anomalies earlier than maintenance logs</li>
-<li>Reduces operational costs through better fuel monitoring, fraud detection, and maintenance management</li>
-<li>Provides data-driven risk profiles to support insurance negotiations and premium reductions</li>
-</ul></li>
+<li>Tech: HiveSQL, PySpark, Python</li>
+<li>Link: <a href="./big-data.html">Project page</a> · <a href="https://github.com/EricChu666/Big-Data" class="uri">https://github.com/EricChu666/Big-Data</a></li>
 </ul>
-</section>
-<section id="strategy" class="level2">
-<h2 class="anchored" data-anchor-id="strategy">Strategy</h2>
-<ul>
-<li>Capture the insights in the raw data and match them with the same key fields.</li>
-<li>Organize the data through Hive SQL to verify the connections between the tables.</li>
-<li>Calculate and define the high-risk drivers through Python.</li>
-<li>Detect the anomalies of fuel efficiency by checking the mpg.</li>
-<li>Build up a dashboard to view the outcome at once.</li>
-</ul>
-</section>
-<section id="data-pipeline" class="level2">
-<h2 class="anchored" data-anchor-id="data-pipeline">Data &amp; Pipeline</h2>
-<p>Tools</p>
-<ul>
-<li><strong>Hive SQL</strong> — Data organization and table creation in Hadoop ecosystem</li>
-<li><strong>Python (Pandas, NumPy)</strong> — Statistical analysis and risk calculations</li>
-<li><strong>Tableau</strong> — Dashboard visualization and interactive reporting</li>
-</ul>
-<p>Data Sources</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>File</th>
-<th>Records</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>trucks.csv</td>
-<td>100 drivers x 54 months</td>
-<td>Historical monthly miles and gas consumption</td>
-</tr>
-<tr class="even">
-<td>driver_mpg.csv</td>
-<td>100 drivers</td>
-<td>Current period total miles, gas, and average MPG</td>
-</tr>
-<tr class="odd">
-<td>driver_risk.csv</td>
-<td>99 drivers</td>
-<td>Count of risky driving events per driver</td>
-</tr>
-<tr class="even">
-<td>geolocation.csv</td>
-<td>8,000 records</td>
-<td>Individual driving events with location data</td>
-</tr>
-<tr class="odd">
-<td>model_risk.csv</td>
-<td>11 models</td>
-<td>Total risky events aggregated by truck model</td>
-</tr>
-<tr class="even">
-<td>city_risk.csv</td>
-<td>54 cities</td>
-<td>Total risky events aggregated by city</td>
-</tr>
-<tr class="odd">
-<td>event_type_counts.csv</td>
-<td>4 event types</td>
-<td>Fleet-wide count of each risky event type</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="methodology" class="level2">
-<h2 class="anchored" data-anchor-id="methodology">Methodology</h2>
-<ul>
-<li>Risk scoring approach:
-<ul>
-<li><p>The risk factor combines three components into a comprehensive score from 1 to 10</p></li>
-<li><p>Formula</p>
-<div>
-<p>Risk Factor = Base Event Risk + Fuel Penalty + Model Penalty = [1 + (events/14) × 7] + [MIN(|z_score|, 2)] + [model_events/89]</p>
-</div></li>
-</ul></li>
-<li>Fuel anomaly alerts:
-<ul>
-<li><p>Fuel anomalies are detected using Z-score analysis against each driver’s own 54-month historical baseline</p></li>
-<li><p>Formula</p>
-<div>
-<p>Z-Score = (Current_MPG - Historical_Mean_MPG) / Historical_Std_Dev</p>
-</div></li>
-</ul></li>
-</ul>
-</section>
-<section id="outcomes" class="level2">
-<h2 class="anchored" data-anchor-id="outcomes">Outcomes</h2>
-<p>Key Metrics</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Metric</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Total Drivers Analyzed</td>
-<td>99</td>
-</tr>
-<tr class="even">
-<td>High Risk Drivers (≥ 7.0)</td>
-<td>2 (2%)</td>
-</tr>
-<tr class="odd">
-<td>Medium Risk Drivers (5.0-6.9)</td>
-<td>32 (32%)</td>
-</tr>
-<tr class="even">
-<td>Low Risk Drivers (&lt; 5.0)</td>
-<td>65 (66%)</td>
-</tr>
-<tr class="odd">
-<td>Drivers with Fuel Alerts</td>
-<td>14 (14%)</td>
-</tr>
-<tr class="even">
-<td><strong>Dual Concern Drivers</strong></td>
-<td><strong>1 (1%)</strong></td>
-</tr>
-<tr class="odd">
-<td>Average Risk Factor</td>
-<td>4.12</td>
-</tr>
-<tr class="even">
-<td>Maximum Risk Factor</td>
-<td>10.0</td>
-</tr>
-</tbody>
-</table>
-<p>High Risk Driver Details</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 11%">
-<col style="width: 18%">
-<col style="width: 18%">
-<col style="width: 11%">
-<col style="width: 21%">
-<col style="width: 19%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Driver</th>
-<th>Model</th>
-<th>Risk Factor</th>
-<th>Events</th>
-<th>MPG Deviation</th>
-<th>Dual Concern</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>A97</td>
-<td>Caterpillar</td>
-<td>10.0/10</td>
-<td>14</td>
-<td>+30.9%</td>
-<td>✅ YES</td>
-</tr>
-<tr class="even">
-<td>A73</td>
-<td>Oshkosh</td>
-<td>7.27/10</td>
-<td>10</td>
-<td>-13.1%</td>
-<td>❌ NO</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="tech-stack" class="level2">
-<h2 class="anchored" data-anchor-id="tech-stack">Tech Stack</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Technology</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Hive SQL</td>
-<td>Data organization, table creation, and aggregation in Hadoop ecosystem</td>
-</tr>
-<tr class="even">
-<td>Python</td>
-<td>Statistical analysis, risk calculations, data transformation</td>
-</tr>
-<tr class="odd">
-<td>Pandas</td>
-<td>Data manipulation and reshaping</td>
-</tr>
-<tr class="even">
-<td>Numpy</td>
-<td>Numerical computations and statistical functions</td>
-</tr>
-<tr class="odd">
-<td>Tableau</td>
-<td>Interactive dashboard visualization and reporting</td>
-</tr>
-<tr class="even">
-<td>Cloudera Hadoop</td>
-<td>Big data infrastructure and HDFS storage</td>
-</tr>
-<tr class="odd">
-<td>ODBC/JDBC</td>
-<td>Tableau connectivity to Hadoop/Hive</td>
-</tr>
-</tbody>
-</table>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

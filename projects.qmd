@@ -1,0 +1,13 @@
+---
+title: "projects"
+toc: true
+---
+
+This page is a portfolio overview. Click into each project for details (problem, strategy, methodology, bottlenecks, new tech, outcomes).
+
+### Big Data - Driver & Truck Performance Analysis
+
+Analyzing performance among truck drivers and truck models across cities in California, building risk assessment and fuel anomaly alerts to prioritize high-risk drivers/vehicles.
+
+-   Tech: HiveSQL, PySpark, Python
+-   Link: [Project page](big-data.qmd) · <https://github.com/EricChu666/Big-Data>

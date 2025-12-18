@@ -1,0 +1,106 @@
+---
+title: "Big Data — Driver & Truck Performance Analysis"
+toc: true
+---
+
+## Overview
+
+This project analyzes the performance of truck drivers and truck models across cities in California for Az National Trucking (ANT), a fictional national trucking corporation. The goal is to build a risk assessment and fuel anomaly alerting workflow to help prioritize high-risk drivers/vehicles.
+
+**Repo:** <https://github.com/EricChu666/Big-Data>
+
+## Problem Statement
+
+-   **Primary Question:** What insights can help management prioritize which drivers require intervention and which vehicles require inspection, in order to improve fleet reliability and safety?
+-   **Specific Business Objective:** Identify drivers with a risk factor greater than or equal to 7.0 (on a scale of 1-10) who also have fuel efficiency anomalies, creating a "dual concern" flag for immediate management attention.
+-   **Why does it matter?**
+    -   Gives management a clear, consolidated view of operational risk across 100 drivers
+    -   Identifies dangerous driving patterns (speeding, lane departure, unsafe following) before accidents happen
+    -   Detects fuel-related mechanical issues through MPG anomalies earlier than maintenance logs
+    -   Reduces operational costs through better fuel monitoring, fraud detection, and maintenance management
+    -   Provides data-driven risk profiles to support insurance negotiations and premium reductions
+
+## Strategy
+
+-   Capture the insights in the raw data and match them with the same key fields.
+-   Organize the data through Hive SQL to verify the connections between the tables.
+-   Calculate and define the high-risk drivers through Python.
+-   Detect the anomalies of fuel efficiency by checking the mpg.
+-   Build up a dashboard to view the outcome at once.
+
+## Data & Pipeline
+
+Tools
+
+-   **Hive SQL** — Data organization and table creation in Hadoop ecosystem
+-   **Python (Pandas, NumPy)** — Statistical analysis and risk calculations
+-   **Tableau** — Dashboard visualization and interactive reporting
+
+Data Sources
+
+| File | Records | Description |
+|----|----|----|
+| trucks.csv | 100 drivers x 54 months | Historical monthly miles and gas consumption |
+| driver_mpg.csv | 100 drivers | Current period total miles, gas, and average MPG |
+| driver_risk.csv | 99 drivers | Count of risky driving events per driver |
+| geolocation.csv | 8,000 records | Individual driving events with location data |
+| model_risk.csv | 11 models | Total risky events aggregated by truck model |
+| city_risk.csv | 54 cities | Total risky events aggregated by city |
+| event_type_counts.csv | 4 event types | Fleet-wide count of each risky event type |
+
+## Methodology
+
+-   Risk scoring approach:
+    -   The risk factor combines three components into a comprehensive score from 1 to 10
+
+    -   Formula
+
+        <div>
+
+        Risk Factor = Base Event Risk + Fuel Penalty + Model Penalty = \[1 + (events/14) × 7\] + \[MIN(\|z_score\|, 2)\] + \[model_events/89\]
+
+        </div>
+-   Fuel anomaly alerts:
+    -   Fuel anomalies are detected using Z-score analysis against each driver's own 54-month historical baseline
+
+    -   Formula
+
+        <div>
+
+        Z-Score = (Current_MPG - Historical_Mean_MPG) / Historical_Std_Dev
+
+        </div>
+
+## Outcomes
+
+Key Metrics
+
+| Metric                        | Value      |
+|-------------------------------|------------|
+| Total Drivers Analyzed        | 99         |
+| High Risk Drivers (≥ 7.0)     | 2 (2%)     |
+| Medium Risk Drivers (5.0-6.9) | 32 (32%)   |
+| Low Risk Drivers (\< 5.0)     | 65 (66%)   |
+| Drivers with Fuel Alerts      | 14 (14%)   |
+| **Dual Concern Drivers**      | **1 (1%)** |
+| Average Risk Factor           | 4.12       |
+| Maximum Risk Factor           | 10.0       |
+
+High Risk Driver Details
+
+| Driver | Model       | Risk Factor | Events | MPG Deviation | Dual Concern |
+|--------|-------------|-------------|--------|---------------|--------------|
+| A97    | Caterpillar | 10.0/10     | 14     | +30.9%        | ✅ YES       |
+| A73    | Oshkosh     | 7.27/10     | 10     | -13.1%        | ❌ NO        |
+
+## Tech Stack
+
+| Technology | Purpose |
+|----|----|
+| Hive SQL | Data organization, table creation, and aggregation in Hadoop ecosystem |
+| Python | Statistical analysis, risk calculations, data transformation |
+| Pandas | Data manipulation and reshaping |
+| Numpy | Numerical computations and statistical functions |
+| Tableau | Interactive dashboard visualization and reporting |
+| Cloudera Hadoop | Big data infrastructure and HDFS storage |
+| ODBC/JDBC | Tableau connectivity to Hadoop/Hive |

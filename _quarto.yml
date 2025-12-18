@@ -13,7 +13,7 @@ website:
         href: projects.qmd
         menu: 
           - text: Big Data (Driver & Truck)
-            href: big-data.qmd
+            href: big-data.html
 
             
       - href: 'Pin-Yu Chu Resume.pdf'
@@ -22,7 +22,7 @@ website:
 format:
   html:
     theme:
-      - united
+      - flatly
       - brand
     css: styles.css
     toc: true

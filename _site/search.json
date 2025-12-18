@@ -1,10 +1,52 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Eric Chu",
+    "section": "",
+    "text": "My name is Eric, pursuing Master’s Degree in Business Analytics and Artificial Intelligence, with expertise in data science. My aspiration is to develop logistics and solutions across various industries such as high-tech, supply chain, healthcare, and banking"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "# Scatter plot of Sepal.Length vs Sepal.Width\nplot(iris$Sepal.Length, iris$Sepal.Width,\n     col = \"firebrick\", pch = 19,\n     xlab = \"Sepal Length\", ylab = \"Sepal Width\",\n     main = \"Scatter Plot of Iris Data\")\n\n\n\n\n\n\n\n# Histogram of Petal.Length\nhist(iris$Petal.Length,\n     col = \"steelblue\", border = \"white\",\n     main = \"Histogram of Petal Length\",\n     xlab = \"Petal Length\")\n\n\n\n\n\n\n\n# Boxplot by Species\nboxplot(Sepal.Length ~ Species, data = iris,\n        col = c(\"tomato\", \"gold\", \"lightgreen\"),\n        main = \"Sepal Length by Species\",\n        ylab = \"Sepal Length\")\n\n\n\n\n\n\n\nlibrary(ggplot2)\n\nggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +\n  geom_point(size = 3) +\n  theme_minimal() +\n  labs(title = \"Iris Sepal Dimensions\", x = \"Sepal Length\", y = \"Sepal Width\")"
+  },
+  {
+    "objectID": "Projects.html",
+    "href": "Projects.html",
+    "title": "Project",
+    "section": "",
+    "text": "```{##Project 1:}\n{r}\n\nDriver Risk Dashboard (Tableau)\n``` ::: :::: :::::"
+  },
+  {
     "objectID": "projects.html",
     "href": "projects.html",
     "title": "projects",
     "section": "",
-    "text": "This page is a portfolio overview. Click into each project for details (problem, strategy, methodology, bottlenecks, new tech, outcomes).\n\nBig Data - Driver & Truck Performance Analysis\nAnalyzing performance among truck drivers and truck models across cities in California, building risk assessment and fuel anomaly alerts to prioritize high-risk drivers/vehicles.\n\nTech: HiveSQL, PySpark, Python\nLink: Project page · https://github.com/EricChu666/Big-Data"
+    "text": "This page is a portfolio overview. Click into each project for details (problem, strategy, methodology, bottlenecks, new tech, outcomes).\n\nBig Data - Driver & Truck Performance Analysis\n\nAnalyzing performance among truck drivers and truck models across cities in California, building risk assessment and fuel anomaly alerts to prioritize high-risk drivers/vehicles.\n\nTech: HiveSQL, PySpark, Python\nLink: Project page · https://github.com/EricChu666/Big-Data"
+  },
+  {
+    "objectID": "projects.html#data-engineering-analytics",
+    "href": "projects.html#data-engineering-analytics",
+    "title": "projects",
+    "section": "Data Engineering & Analytics",
+    "text": "Data Engineering & Analytics\n\nBig Data - Driver & Truck Performance Analysis\n\nAnalyzing the performance among truck drivers and truck models across the cities in California, establishing the risk assessment and fuel anomalies alerts to assist in filtering and tackling the high-risk drivers or vehicles.\nWhat I did\n\nEstablish data and searching pipeline (Hive SQL)\nRisk assessment and fuel alert analysis (PySpark/Python)\nProduce traceable analytics results (used in dashboard or later-on monitor)\n\nTech\n\nHiveSQL, PySpark, Python\n\nLinks\n\nGitHub Repo: https://github.com/EricChu666/Big-Data"
+  },
+  {
+    "objectID": "projects.html#machine-learning",
+    "href": "projects.html#machine-learning",
+    "title": "projects",
+    "section": "Machine Learning",
+    "text": "Machine Learning\n(Coming soon)"
+  },
+  {
+    "objectID": "projects.html#finance-modeling",
+    "href": "projects.html#finance-modeling",
+    "title": "projects",
+    "section": "Finance / Modeling",
+    "text": "Finance / Modeling\n(Coming soon)"
   },
   {
     "objectID": "big-data.html",
@@ -63,10 +105,10 @@
     "text": "Tech Stack\n\n\n\n\n\n\n\nTechnology\nPurpose\n\n\n\n\nHive SQL\nData organization, table creation, and aggregation in Hadoop ecosystem\n\n\nPython\nStatistical analysis, risk calculations, data transformation\n\n\nPandas\nData manipulation and reshaping\n\n\nNumpy\nNumerical computations and statistical functions\n\n\nTableau\nInteractive dashboard visualization and reporting\n\n\nCloudera Hadoop\nBig data infrastructure and HDFS storage\n\n\nODBC/JDBC\nTableau connectivity to Hadoop/Hive"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Eric Chu",
-    "section": "",
-    "text": "My name is Eric, pursuing Master’s Degree in Business Analytics and Artificial Intelligence, with expertise in data science. My aspiration is to develop logistics and solutions across various industries such as high-tech, supply chain, healthcare, and banking"
+    "objectID": "projects.html#data-engineer-analytics",
+    "href": "projects.html#data-engineer-analytics",
+    "title": "projects",
+    "section": "Data Engineer & Analytics",
+    "text": "Data Engineer & Analytics\n\nBig Data - Driver & Truck Performance Analysis\n\nAnalyzing performance among truck drivers and truck models across cities in California, building risk assessment and fuel anomaly alerts to prioritize high-risk drivers/vehicles.\n\nTech: HiveSQL, PySpark, Python\nLink: Project page · https://github.com/EricChu666/Big-Data"
   }
 ]
