@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "projects",
+    "section": "",
+    "text": "This page is a portfolio overview. Click into each project for details (problem, strategy, methodology, bottlenecks, new tech, outcomes).\n\nBig Data - Driver & Truck Performance Analysis\n\nAnalyzing performance among truck drivers and truck models across cities in California, building risk assessment and fuel anomaly alerts to prioritize high-risk drivers/vehicles.\n\nTech: HiveSQL, PySpark, Python\nLink: Project page · https://github.com/EricChu666/Big-Data"
+  },
+  {
+    "objectID": "big-data.html",
+    "href": "big-data.html",
+    "title": "Big Data — Driver & Truck Performance Analysis",
+    "section": "",
+    "text": "This project analyzes the performance of truck drivers and truck models across cities in California for Az National Trucking (ANT), a fictional national trucking corporation. The goal is to build a risk assessment and fuel anomaly alerting workflow to help prioritize high-risk drivers/vehicles.\nRepo: https://github.com/EricChu666/Big-Data"
+  },
+  {
+    "objectID": "big-data.html#overview",
+    "href": "big-data.html#overview",
+    "title": "Big Data — Driver & Truck Performance Analysis",
+    "section": "",
+    "text": "This project analyzes the performance of truck drivers and truck models across cities in California for Az National Trucking (ANT), a fictional national trucking corporation. The goal is to build a risk assessment and fuel anomaly alerting workflow to help prioritize high-risk drivers/vehicles.\nRepo: https://github.com/EricChu666/Big-Data"
+  },
+  {
+    "objectID": "big-data.html#problem-statement",
+    "href": "big-data.html#problem-statement",
+    "title": "Big Data — Driver & Truck Performance Analysis",
+    "section": "Problem Statement",
+    "text": "Problem Statement\n\nPrimary Question: What insights can help management prioritize which drivers require intervention and which vehicles require inspection, in order to improve fleet reliability and safety?\nSpecific Business Objective: Identify drivers with a risk factor greater than or equal to 7.0 (on a scale of 1-10) who also have fuel efficiency anomalies, creating a “dual concern” flag for immediate management attention.\nWhy does it matter?\n\nGives management a clear, consolidated view of operational risk across 100 drivers\nIdentifies dangerous driving patterns (speeding, lane departure, unsafe following) before accidents happen\nDetects fuel-related mechanical issues through MPG anomalies earlier than maintenance logs\nReduces operational costs through better fuel monitoring, fraud detection, and maintenance management\nProvides data-driven risk profiles to support insurance negotiations and premium reductions"
+  },
+  {
+    "objectID": "big-data.html#strategy",
+    "href": "big-data.html#strategy",
+    "title": "Big Data — Driver & Truck Performance Analysis",
+    "section": "Strategy",
+    "text": "Strategy\n\nCapture the insights in the raw data and match them with the same key fields.\nOrganize the data through Hive SQL to verify the connections between the tables.\nCalculate and define the high-risk drivers through Python.\nDetect the anomalies of fuel efficiency by checking the mpg.\nBuild up a dashboard to view the outcome at once."
+  },
+  {
+    "objectID": "big-data.html#data-pipeline",
+    "href": "big-data.html#data-pipeline",
+    "title": "Big Data — Driver & Truck Performance Analysis",
+    "section": "Data & Pipeline",
+    "text": "Data & Pipeline\nTools\n\nHive SQL — Data organization and table creation in Hadoop ecosystem\nPython (Pandas, NumPy) — Statistical analysis and risk calculations\nTableau — Dashboard visualization and interactive reporting\n\nData Sources\n\n\n\n\n\n\n\n\nFile\nRecords\nDescription\n\n\n\n\ntrucks.csv\n100 drivers x 54 months\nHistorical monthly miles and gas consumption\n\n\ndriver_mpg.csv\n100 drivers\nCurrent period total miles, gas, and average MPG\n\n\ndriver_risk.csv\n99 drivers\nCount of risky driving events per driver\n\n\ngeolocation.csv\n8,000 records\nIndividual driving events with location data\n\n\nmodel_risk.csv\n11 models\nTotal risky events aggregated by truck model\n\n\ncity_risk.csv\n54 cities\nTotal risky events aggregated by city\n\n\nevent_type_counts.csv\n4 event types\nFleet-wide count of each risky event type"
+  },
+  {
+    "objectID": "big-data.html#methodology",
+    "href": "big-data.html#methodology",
+    "title": "Big Data — Driver & Truck Performance Analysis",
+    "section": "Methodology",
+    "text": "Methodology\n\nRisk scoring approach:\n\nThe risk factor combines three components into a comprehensive score from 1 to 10\nFormula\n\nRisk Factor = Base Event Risk + Fuel Penalty + Model Penalty = [1 + (events/14) × 7] + [MIN(|z_score|, 2)] + [model_events/89]\n\n\nFuel anomaly alerts:\n\nFuel anomalies are detected using Z-score analysis against each driver’s own 54-month historical baseline\nFormula\n\nZ-Score = (Current_MPG - Historical_Mean_MPG) / Historical_Std_Dev"
+  },
+  {
+    "objectID": "big-data.html#outcomes",
+    "href": "big-data.html#outcomes",
+    "title": "Big Data — Driver & Truck Performance Analysis",
+    "section": "Outcomes",
+    "text": "Outcomes\nKey Metrics\n\n\n\nMetric\nValue\n\n\n\n\nTotal Drivers Analyzed\n99\n\n\nHigh Risk Drivers (≥ 7.0)\n2 (2%)\n\n\nMedium Risk Drivers (5.0-6.9)\n32 (32%)\n\n\nLow Risk Drivers (&lt; 5.0)\n65 (66%)\n\n\nDrivers with Fuel Alerts\n14 (14%)\n\n\nDual Concern Drivers\n1 (1%)\n\n\nAverage Risk Factor\n4.12\n\n\nMaximum Risk Factor\n10.0\n\n\n\nHigh Risk Driver Details\n\n\n\n\n\n\n\n\n\n\n\nDriver\nModel\nRisk Factor\nEvents\nMPG Deviation\nDual Concern\n\n\n\n\nA97\nCaterpillar\n10.0/10\n14\n+30.9%\n✅ YES\n\n\nA73\nOshkosh\n7.27/10\n10\n-13.1%\n❌ NO"
+  },
+  {
+    "objectID": "big-data.html#tech-stack",
+    "href": "big-data.html#tech-stack",
+    "title": "Big Data — Driver & Truck Performance Analysis",
+    "section": "Tech Stack",
+    "text": "Tech Stack\n\n\n\n\n\n\n\nTechnology\nPurpose\n\n\n\n\nHive SQL\nData organization, table creation, and aggregation in Hadoop ecosystem\n\n\nPython\nStatistical analysis, risk calculations, data transformation\n\n\nPandas\nData manipulation and reshaping\n\n\nNumpy\nNumerical computations and statistical functions\n\n\nTableau\nInteractive dashboard visualization and reporting\n\n\nCloudera Hadoop\nBig data infrastructure and HDFS storage\n\n\nODBC/JDBC\nTableau connectivity to Hadoop/Hive"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Eric Chu",
+    "section": "",
+    "text": "My name is Eric, pursuing Master’s Degree in Business Analytics and Artificial Intelligence, with expertise in data science. My aspiration is to develop logistics and solutions across various industries such as high-tech, supply chain, healthcare, and banking"
+  }
+]

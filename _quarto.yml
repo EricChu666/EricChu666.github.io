@@ -1,0 +1,31 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "EricChu666.github.io"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+        
+      - text: projects
+        href: projects.qmd
+        menu: 
+          - text: Big Data (Driver & Truck)
+            href: big-data.qmd
+
+            
+      - href: 'Pin-Yu Chu Resume.pdf'
+        text: CV
+
+format:
+  html:
+    theme:
+      - united
+      - brand
+    css: styles.css
+    toc: true
+
+editor: visual
+
